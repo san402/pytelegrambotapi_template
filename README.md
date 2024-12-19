@@ -38,3 +38,19 @@ This repository provides a starting point for building Telegram bots with [PyTel
    ```bash
    git clone https://github.com/san402/pytelegrambotapi_template
    cd pytelegrambotapi_template
+
+2. ### Настройте переменные окружения
+
+**Создайте файл `.env` в корневой директории проекта:**
+```env
+TELEGRAM_BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
+DB_HOST=your-bot-mongodb
+DB_NAME=example
+DB_COLLECTION=users
+```
+
+3. ### Запустите докер
+```bash
+docker-compose up --build
+```
+
