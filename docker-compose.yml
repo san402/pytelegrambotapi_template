@@ -1,0 +1,32 @@
+services:
+  your-bot-mongodb:
+    env_file:
+      - .env
+    restart: unless-stopped
+    image: mongo:latest
+    container_name: support-mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      # seeding scripts
+      # named volumes
+      - mongodb:/data/db
+      - mongoconfig:/data/configdb
+    networks:
+      - support_net
+  your-bot-bot:
+    restart: unless-stopped
+    build: .
+    container_name: support-bot
+    networks:
+      - support_net
+
+
+volumes:
+  # default dir on Ubuntu: /var/lib/docker/volumes
+  mongodb:
+  mongoconfig:
+
+networks:
+  support_net:
+    driver: bridge

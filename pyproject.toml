@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pytelegrambotapi-template"
+version = "0.1.0"
+description = ""
+authors = ["san402 <san402@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+loguru = "^0.7.3"
+pydantic = "^2.10.4"
+pymongo = "^4.10.1"
+pytelegrambotapi = "^4.25.0"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
