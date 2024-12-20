@@ -42,15 +42,17 @@ def callback_query(call):
     user = User(from_user=call.from_user)
     # handle user callback here
 
+@bot.message_handler(commands=['start'])
+def start(message):
+    user = User(from_user=message.from_user)
+    # handle start command here
+
 @bot.message_handler(content_types=['text'])
 def message_handler(message):
     user = User(from_user=message.from_user)
     # handle user message here
 
-@bot.message_handler(commands=['start'])
-def start(message):
-    user = User(from_user=message.from_user)
-    # handle start command here
+
 
 if __name__ == '__main__':
     bot.polling()
